@@ -3,12 +3,10 @@ import ProjectItem from "./ProjectItem";
 
 function ProjectList({ projects }) {
   console.log(projects);
-  return (
-    <div id="projects">
-      <h2>My Projects</h2>
-      <div id="project-list">{/* render ProjectItem components here */}</div>
-    </div>
-  );
-}
+  let project = projects.map((element) => {
+    return <ProjectItem name={element.name} about={element.about} technologies={element.technologies} key={element.id} />
+  });
+  return project;
+};
 
 export default ProjectList;
